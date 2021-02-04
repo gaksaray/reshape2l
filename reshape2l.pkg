@@ -1,0 +1,13 @@
+v 1.4
+d
+d 'RESHAPE2L': A Stata program to quickly convert data from wide to long form.
+d
+d A Stata program to quickly convert data from wide to long form.
+d
+d Distribution-Date: 20210204
+d
+d Author: Gorkem Aksaray
+d Support: gaksaray@ku.edu.tr
+d
+f ado/reshape2l.ado
+f sthlp/reshape2l.sthlp
