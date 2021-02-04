@@ -51,7 +51,7 @@ timer off 2
 timer list
 ```
 
-On my laptop with SSD, here are the results
+On my laptop with SSD, here are the results:
 
 ```stata
 . timer list
