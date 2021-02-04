@@ -1,0 +1,3 @@
+v 1.4
+d Gorkem Aksaray, gaksaray@ku.edu.tr
+p 'RESHAPE2L': A Stata program to quickly convert data from wide to long form.
