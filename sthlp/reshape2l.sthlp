@@ -65,3 +65,4 @@ The speed gain of {cmd:reshape2l} over {cmd:reshape long} increases with size an
 Gorkem Aksaray, Koc University, Turkey.{p_end}
 {p 4}Email: {browse "mailto:gaksaray@ku.edu.tr":gaksaray@ku.edu.tr}{p_end}
 {p 4}Personal Website: {browse "https://sites.google.com/site/gorkemak/":sites.google.com/site/gorkemak}{p_end}
+{p 4}GitHub: {browse "https://github.com/gaksaray/":github.com/gaksaray}{p_end}
