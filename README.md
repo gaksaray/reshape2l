@@ -7,8 +7,54 @@
 ## Installation
 
 To install directly within Stata, use the following command:
-```stata
+```{stata}
 * capture ado uninstall reshape2l
 local github "https://raw.githubusercontent.com"
 net install reshape2l, from(`github'/gaksaray/stata-reshape2l/master)
+```
+
+## Test
+
+You can compare the speed of `reshape2l` against `reshape long`:
+
+```stata
+clear
+set seed 1987
+set obs 10000
+
+generate id = _n
+gen sex = runiform() < 0.5
+
+forvalues i = 1/1000 {
+	generate x`i' = runiform()
+	generate y`i' = rnormal()
+	generate z`i' = rlogistic()
+}
+
+tempfile testdata
+save "`testdata'"
+
+timer clear
+
+use "`testdata'", clear
+
+timer on 1
+reshape long x y z, i(id) j(denom)
+timer off 1
+
+use "`testdata'", clear
+
+timer on 2
+reshape2l x y z, i(id) j(denom)
+timer off 2
+
+timer list
+```
+
+On my laptop with SSD, here are the results
+
+```stata
+. timer list
+   1:    614.39 /        1 =     614.3910
+   2:     58.44 /        1 =      58.4410
 ```
