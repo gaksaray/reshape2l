@@ -129,8 +129,10 @@ program define reshape2l
 		}
 
 		* Generate j
-		if "`j'" != "" generate `j' = `n'
-		else generate _j = `n'
+		if "`j'" == "" {
+			local j _j
+		}
+		generate `j' = `n'
 
 		* Build `file' for concentation
 		tempfile temp
