@@ -7,7 +7,7 @@
 ## Installation
 
 To install directly within Stata, use the following command:
-```{stata}
+```stata
 * capture ado uninstall reshape2l
 local github "https://raw.githubusercontent.com"
 net install reshape2l, from(`github'/gaksaray/stata-reshape2l/master)
