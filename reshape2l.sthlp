@@ -1,14 +1,17 @@
 {smcl}
-{* *! version 1.4  04feb2021}{...}
+{* v1.5  06feb2021}{...}
 {viewerjumpto "Syntax" "reshape2l##syntax"}{...}
 {viewerjumpto "Description" "reshape2l##description"}{...}
 {viewerjumpto "Options" "reshape2l##options"}{...}
 {viewerjumpto "Examples" "reshape2l##examples"}{...}
 {viewerjumpto "Author" "reshape2l##author"}{...}
+{cmd:help reshape2l}{right: {browse "https://github.com/gaksaray/stata-reshape2l/"}}
+{hline}
+
 {title:Title}
 
 {phang}
-{bf:reshape2l} {hline 2} Reshape from wide to long faster
+{bf:reshape2l} {hline 2} Convert data from wide to long form faster
 
 
 {marker syntax}{...}
@@ -26,13 +29,14 @@
 {title:Description}
 
 {pstd}
-{cmd:reshape2l} is a utility program to quickly convert data from wide to long form.
+{cmd:reshape2l} converts data from wide to long form.
 It is primarily used in situations where {it:stubnames} are followed by numeric parts, which is often the case for raw panel datasets.
 
 {pstd}
-{cmd:reshape2l} is similar to {helpb reshape} {helpb reshape##overview:long} but significantly faster, especially for large datasets where memory requirement gets very high and {cmd:reshape} becomes very slow.
-It relies on secondary storage rather than memory.
-The speed gain of {cmd:reshape2l} over {cmd:reshape long} increases with size and width of the dataset as well as read and write speed of storage device where the STATATMP folder resides.
+{cmd:reshape2l} is similar to {helpb reshape} {helpb reshape##overview:long} but significantly faster, especially for large (and wide) datasets where memory requirement gets very high and {cmd:reshape long} becomes very slow.
+It achieves faster speeds by relying on secondary storage rather than memory.
+The speed gain of {cmd:reshape2l} over {cmd:reshape long} increases with size and width of the dataset as well as read and write speed of storage device where the
+{browse "https://www.stata.com/support/faqs/data-management/statatmp-environment-variable/":STATATMP} folder resides.
 
 
 {marker options}{...}
