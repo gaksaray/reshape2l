@@ -1,5 +1,5 @@
 {smcl}
-{* v1.5  06feb2021}{...}
+{* v1.5.1  06apr2021}{...}
 {viewerjumpto "Syntax" "reshape2l##syntax"}{...}
 {viewerjumpto "Description" "reshape2l##description"}{...}
 {viewerjumpto "Options" "reshape2l##options"}{...}

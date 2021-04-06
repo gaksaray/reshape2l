@@ -1,4 +1,4 @@
-*! version 1.5  06feb2021  Gorkem Aksaray
+*! version 1.5.1  06apr2021  Gorkem Aksaray
 
 capture program drop reshape2l
 program reshape2l
@@ -19,8 +19,8 @@ program reshape2l
 		exit
 	}
 	
-	* Create jlist (for jnote)
-	local jlist
+	local jlist "" // will be used for `jnote'
+	local passcount = 0 // will be used to calculate `min' and `max'
 	
 	* Unabbreviate used variable list for all stubs
 	foreach stub of local stublist {
@@ -46,8 +46,7 @@ program reshape2l
 			}
 			
 			// if w is numeric
-			local passcount = 0
-			else {
+			else if !_rc {
 				local ++passcount
 				
 				local r = real("`w'")
@@ -153,7 +152,7 @@ program reshape2l
 		di "... appending"
 	}
 	clear
-	append using `files'
+	qui append using `files', nolabel nonotes
 	
 	* Order and sort
 	order `i' `j' `unusedvarlist'
